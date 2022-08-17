@@ -5,7 +5,7 @@ public class tim_so_be_nhat {
         int [][] array= {
                 {49,2,3,4,5,9},
                 {32,13,21,1,12,14},
-                { 75,43,25,61,28,83}
+                {75,43,25,61,28,83}
         };
         System.out.println("Mảng 2 chiều là: ");
         for (int i=0;i<array.length;i++) {
