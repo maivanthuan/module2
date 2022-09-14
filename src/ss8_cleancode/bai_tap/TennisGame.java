@@ -1,12 +1,13 @@
 package ss8_cleancode.bai_tap;
 
 public class TennisGame {
-    public static String getScore(String player1Name, String player2Name, int score1, int score2) {
+
+    public static String getScore(String player1Name, String player2Name, int m_score1, int m_score2) {
         String score = "";
         int tempScore=0;
-        if (score1==score2)
+        if (m_score1==m_score2)
         {
-            switch (score1)
+            switch (m_score1)
             {
                 case 0:
                     score = "Love-All";
@@ -26,9 +27,9 @@ public class TennisGame {
 
             }
         }
-        else if (score1>=4 || score2>=4)
+        else if (m_score1>=4 || m_score2>=4)
         {
-            int minusResult = score1-score2;
+            int minusResult = m_score1-m_score2;
             if (minusResult==1) score ="Advantage player1";
             else if (minusResult ==-1) score ="Advantage player2";
             else if (minusResult>=2) score = "Win for player1";
@@ -36,10 +37,10 @@ public class TennisGame {
         }
         else
         {
-            for (int index=1; index<3; index++)
+            for (int i=1; i<3; i++)
             {
-                if (index==1) tempScore = score1;
-                else { score+="-"; tempScore = score2;}
+                if (i==1) tempScore = m_score1;
+                else { score+="-"; tempScore = m_score2;}
                 switch(tempScore)
                 {
                     case 0:
@@ -60,4 +61,3 @@ public class TennisGame {
         return score;
     }
 }
-
