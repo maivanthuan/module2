@@ -1,4 +1,4 @@
-package ss10_DSA.bai_tap;
+package ss10_stack_queue.bai_tap;
 
 import java.util.EmptyStackException;
 import java.util.LinkedList;
