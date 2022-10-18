@@ -1,29 +1,32 @@
-package ss16_IO_Binary_file_Serialization.bài_tap;
+package case_study;
+
+import case_study.model.Customer;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadAndWriteProduct {
-    List<Product>productList=new ArrayList<>();
-    public void writeFile(List<Product>productList,String filePath) {
+public class Readandwrite {
+    public static int writeFile;
+    List<Customer> customerList=new ArrayList<>();
+    public static void writeFile(List<Customer> customerList, String filePath) {
         try {
             FileOutputStream fos=new FileOutputStream(filePath);
             ObjectOutputStream hihi= new ObjectOutputStream(fos);
-            hihi.writeObject(productList);
+            hihi.writeObject(customerList);
             hihi.close();
         } catch (IOException e) {
             System.out.println("Lỗi file viết");;
         }
     }
-    public List<Product>readFile(String filePath) {
+    public List<Customer>readFile(String filePath) {
         try {
             FileInputStream fis = new FileInputStream(filePath);
             ObjectInputStream haha = new ObjectInputStream(fis);
-            productList = (List<Product>) haha.readObject();
+            customerList = (List<Customer>) haha.readObject();
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Lỗi file đọc");;
         }
-        return productList;
+        return customerList;
     }
 }

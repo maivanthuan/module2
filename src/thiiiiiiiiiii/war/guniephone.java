@@ -1,14 +1,15 @@
 //package thi_th.util;
 //
 //import thi_th.model.CellPhone;
+//import thi_th.model.GenuinePhone;
 //
 //import java.io.*;
 //import java.util.ArrayList;
 //import java.util.List;
 //
-//public class ReadAndWriteCellPhone {
-//    public List<CellPhone> readFileCellPhone(String filePath) {
-//        List<CellPhone> cellPhoneList = new ArrayList<>();
+//public class ReadAndWriteGenuinePhone {
+//    public List<GenuinePhone> readFileGenuinePhone(String filePath) {
+//        List<GenuinePhone> genuinePhoneList = new ArrayList<>();
 //        FileReader fileReader = null;
 //        BufferedReader bufferedReader = null;
 //        try {
@@ -23,10 +24,10 @@
 //                double price = Double.parseDouble(temp[2]);
 //                int amount = Integer.parseInt(temp[3]);
 //                String producer = temp[4];
-//                String handCarriedCountry = temp[5];
-//                String status = temp[6];
-//                CellPhone cellPhone = new CellPhone(id, phoneName, price, amount, producer, handCarriedCountry, status);
-//                cellPhoneList.add(cellPhone);
+//                String warrantyPeriod = temp[5];
+//                String warrantyCoverage = temp[6];
+//                GenuinePhone genuinePhone = new GenuinePhone(id, phoneName, price, amount, producer, warrantyPeriod, warrantyCoverage);
+//                genuinePhoneList.add(genuinePhone);
 //            }
 //        } catch (FileNotFoundException e) {
 //            throw new RuntimeException();
@@ -39,19 +40,19 @@
 //                throw new RuntimeException();
 //            }
 //        }
-//        return cellPhoneList;
+//        return genuinePhoneList;
 //    }
 //
-//    public void writeFileCellPhone(List<CellPhone> cellPhoneList, String filePath) {
+//    public void writeFileGenuinePhone(List<GenuinePhone> genuinePhoneList, String filePath) {
 //        FileWriter fileWriter = null;
 //        BufferedWriter bufferedWriter = null;
 //        try {
 //            fileWriter = new FileWriter(filePath);
 //            bufferedWriter = new BufferedWriter(fileWriter);
 //            String str = "";
-//            for (CellPhone cellPhone : cellPhoneList) {
-//                str += cellPhone.getId() + "," + cellPhone.getPhoneName() + "," + cellPhone.getPrice() + "," + cellPhone.getAmount() + "," +
-//                        cellPhone.getProducer() + "," + cellPhone.getHandCarriedCountry() + "," + cellPhone.getStatus() + "\n";
+//            for (GenuinePhone genuinePhone : genuinePhoneList) {
+//                str += genuinePhone.getId() + "," + genuinePhone.getPhoneName() + "," + genuinePhone.getPrice() + "," + genuinePhone.getAmount() + "," +
+//                        genuinePhone.getProducer() + "," + genuinePhone.getWarrantyCoverage() + "," + genuinePhone.getWarrantyPeriod() + "\n";
 //            }
 //            if (str != null && !str.isEmpty()) {
 //                bufferedWriter.write(str);
